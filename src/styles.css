@@ -1,4 +1,86 @@
-.App {
-  color: red; }
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.App{
+  width: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: auto;
+}
+
+.header{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header-logo{
+  width: 39px;
+  height: auto;
+}
+
+.header-bar{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+
+.header-bar .header-user{
+  display: flex;
+  flex-flow: row wrap;
+  width: max-content;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.header-bar .header-coins{
+  background-color: gainsboro;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: .3rem;
+  border-radius: 250px;
+  margin-left: 1rem;
+  justify-content: space-between;
+  width: max-content;
+}
+
+.header-coin-count{
+  margin-right: .5rem;
+
+}
+
+.coin{
+  width: 35%;
+}
+
+/*HEADER IMG*/
+
+.header-img{
+  width: 100%;
+}
+
+.header-img-ctn{
+  position: relative;
+}
+
+.header-title{
+  color: white;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  font-size: 4rem;
+}
+
+
+/*MAIN*/
+
+.main{
+  width: 100%;
+  border: 1px gray solid;
+}
 
 /*# sourceMappingURL=styles.css.map */
