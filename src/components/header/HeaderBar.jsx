@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../assets/aerolab-logo.svg";
-import coin from "../assets/icons/coin.svg";
+import logo from "../../assets/aerolab-logo.svg";
+import coin from "../../assets/icons/coin.svg";
 
 const HeaderBar = () => {
 

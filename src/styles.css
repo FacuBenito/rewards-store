@@ -1,5 +1,12 @@
 *{
   font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 16px;
 }
 
 .App{
@@ -48,10 +55,10 @@
   width: max-content;
 }
 
-.header-coin-count{
+/* .header-coin-count{
   margin-right: .5rem;
 
-}
+} */
 
 .coin{
   width: 35%;
@@ -80,7 +87,42 @@
 
 .main{
   width: 100%;
-  border: 1px gray solid;
+  height: 250px;
+  padding: 5% 10%;
+  color:#616161;
+}
+
+.filters-ctn{
+  border-bottom: 1px gainsboro solid;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 1.2rem;
+  font-size: 1.5rem;
+  align-items: center;
+  height: max-content;
+}
+
+.filters-ctn .product-index{
+  border-right: 1px solid gainsboro;
+  padding-right: 2rem;
+  height: max-content;
+  padding: .8rem;
+}
+
+.sort-title{
+  margin-left: 2rem;
+  color: #616161b2;
+}
+
+.filter{
+  background-color: rgba(220, 220, 220, 0.582);
+  border-radius: 25px;
+  padding: .8rem .5rem;
+  font-size: 1.5rem;
+  border: none;
+  color: #616161b2;
+  margin: 0 .8rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
