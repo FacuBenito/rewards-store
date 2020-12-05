@@ -9,7 +9,6 @@ export default function UserContextProvider({children}) {
 
 	const getUser = async () => {
 		const newUser = await UserService.getUserInfo();
-		console.log(newUser);
 		setUser(newUser);
 	}
 

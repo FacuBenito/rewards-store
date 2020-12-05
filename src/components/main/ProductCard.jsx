@@ -18,7 +18,7 @@ const ProductCard = (props) => {
 						<img src={coin} alt="coin" className="coin"/>
 					</div>
 				}
-				<img src={img.url} alt={`${name}-product`} className="product-img"/>
+				<img src={img.hdUrl} alt={`${name}-product`} className="product-img"/>
 				<div className="product-info">
 					<h4 className="category">{category}</h4>
 					<h3 className="product-name">{name}</h3>
