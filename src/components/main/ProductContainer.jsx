@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductService from "../../services/ProductService";
+import Product from "../main/Product";
 
 const ProductContainer = () => {
 
@@ -16,7 +17,7 @@ const ProductContainer = () => {
 
 	return(
 		<div className="product-container">{products && products.map((product, index) => {
-			return (<span key={index}>{product.name} - </span>)
+			return (<Product {...product} key={index} />)
 		})}
 	</div>
 	)

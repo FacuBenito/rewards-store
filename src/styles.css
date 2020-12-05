@@ -10,7 +10,7 @@
 }
 
 .App{
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -46,7 +46,7 @@
 .header-bar .header-coins{
   background-color: gainsboro;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   padding: .3rem;
   border-radius: 250px;
@@ -62,6 +62,7 @@
 
 .coin{
   width: 35%;
+  max-width: 45px;
 }
 
 /*HEADER IMG*/
@@ -90,6 +91,9 @@
   height: 250px;
   padding: 5% 10%;
   color:#616161;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .filters-ctn{
@@ -123,6 +127,87 @@
   border: none;
   color: #616161b2;
   margin: 0 .8rem;
+}
+
+.product-container{
+  width: 95%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.product-container .product-card{
+  width: 276px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+.product-card:hover > .hover-filter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(-180deg, rgba(10, 212, 250, 0.8) 0%, rgba(37, 187, 241, 0.8) 100%);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card:hover > .buy-bag{
+  z-index: 100;
+}
+
+.product-img{
+  width: 100%;
+}
+
+.product-info{
+  border-top: gainsboro 1px solid;
+}
+
+.buy-bag{
+  float: right;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.hover-filter{
+  display: none;
+}
+
+.cost-ctn{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 300;
+  width: 100%;
+}
+
+.hover-coin{
+  width: 15%;
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+
+.redeem-btn{
+  background-color: white;
+  border-radius: 50px;
+  width: 80%;
+  border: none;
+  margin: 1rem;
+  padding: .6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
