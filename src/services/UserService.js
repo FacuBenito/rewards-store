@@ -12,6 +12,7 @@ class UserService{
 
 		const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers)
 		const data = await resp.json();
+		console.log(data);
 		return data;
 	}
 

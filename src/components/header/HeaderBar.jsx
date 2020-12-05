@@ -1,20 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import logo from "../../assets/aerolab-logo.svg";
 import coin from "../../assets/icons/coin.svg";
-import UserService from "../../services/UserService";
+import { UserContext } from "../../context/UserContext";
 
 const HeaderBar = () => {
-
-	const [user, setUser] = useState({})
-
-	const getUser = async () => {
-		const newUser = await UserService.getUserInfo();
-		setUser(newUser);
-	}
-
-	useEffect(() => {
-		getUser();
-	}, [])
+	
+	const {user, setUser} = useContext(UserContext);
 
 	return(
 		<div className="header-bar">

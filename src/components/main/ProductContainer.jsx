@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductService from "../../services/ProductService";
-import Product from "../main/Product";
+import ProductCard from "./ProductCard";
+import UserContextProvider from "../../context/UserContext";
 
 const ProductContainer = () => {
 
@@ -17,7 +18,11 @@ const ProductContainer = () => {
 
 	return(
 		<div className="product-container">{products && products.map((product, index) => {
-			return (<Product {...product} key={index} />)
+			return (
+				<UserContextProvider>
+					<ProductCard {...product} key={index} />
+				</UserContextProvider>
+			)
 		})}
 	</div>
 	)

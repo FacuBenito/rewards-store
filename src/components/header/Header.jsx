@@ -1,13 +1,18 @@
 import React from "react";
 import HeaderImg from "./HeaderImg";
 import HeaderBar from "./HeaderBar";
+import UserContextProvider from "../../context/UserContext";
 
 const Header = () => {
 
 	return(
 		<div className="header">
-			<HeaderBar/>
+			<UserContextProvider>
+				<HeaderBar/>
+			</UserContextProvider>
+			
 			<HeaderImg/>
+
 		</div>
 	)
 
