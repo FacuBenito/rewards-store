@@ -117,11 +117,9 @@
   padding-bottom: 1.2rem;
   font-size: 1.5rem;
   align-items: center;
-  height: max-content;
 }
 
 .filters-ctn .product-index{
-  border-right: 1px solid gainsboro;
   padding-right: 2rem;
   height: max-content;
   padding: .8rem;
@@ -151,6 +149,30 @@
 .filter:hover{
   transform: translate(-2px, -2px);
   /* box-shadow: 1px 1px 1px 0px rgb(170, 170, 170); */
+}
+
+.filters-ctn .arrows{
+  float: right;
+  align-self: center;
+  margin-left: auto;
+  margin-right: 0;
+  height: 48px;
+  width: 7%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.filters{
+  border-left: 1px solid gainsboro;
+}
+
+.arrows > img{
+  cursor: pointer;
+}
+
+.arrows > img:hover{
+  transform: translate(-1px, -1px);
 }
 
 .product-container{
@@ -326,6 +348,11 @@
 
 .hidden{
   display: none;
+}
+
+.footer{
+  margin: 1.5rem 0 2rem 0;
+  padding-bottom: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

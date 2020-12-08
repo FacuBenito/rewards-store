@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext} from "react";
 import HoverFilter from "./HoverFilter";
 import bag from "../../assets/icons/buy-blue.svg";
@@ -7,6 +8,7 @@ import {UserContext} from "../../context/UserContext"
 const ProductCard = (props) => {
 	const {category, cost, img, name, _id} = props;
 	const {user, setUser} = useContext(UserContext)
+	
 	return(
 			<div className="product-card" id={_id}>
 				{

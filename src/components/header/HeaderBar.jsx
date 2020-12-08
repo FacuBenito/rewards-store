@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext, useEffect} from "react";
 import logo from "../../assets/aerolab-logo.svg";
 import coin from "../../assets/icons/coin.svg";
