@@ -7,6 +7,7 @@ import {ProductContext} from "../../context/ProductContext";
 const Main = () => {
 	const [sort, setSort] = useState("0")
 	const [page, setPage] = useState(1);
+	// eslint-disable-next-line no-unused-vars
 	const {products, setProducts} = useContext(ProductContext);
 	
 	const handleSort = (e) => {

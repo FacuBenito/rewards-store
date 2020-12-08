@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import HeaderImg from "./HeaderImg";
 import HeaderBar from "./HeaderBar";
 import UserContextProvider from "../../context/UserContext";
-import ProductContextProvider from "../../context/ProductContext"
 import AddModal from "../general/AddModal";
 
 const Header = () => {

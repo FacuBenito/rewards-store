@@ -24,6 +24,7 @@ const HeaderBar = ({showModal}) => {
 		
 		setProducts((showHistory ? user.redeemHistory : auxProds));
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[showHistory]);
 
 	return(
@@ -35,8 +36,8 @@ const HeaderBar = ({showModal}) => {
 					<span className="header-coin-count">{user && user.points}</span>
 					<img src={coin} alt="coin" className="coin"/>
 				</div>
-				<span className={`header-username header-btn`} onClick={handleHistory}>{showHistory ? <i className="fas fa-home"></i> : <i className="fas fa-history"></i>}</span>
-				<span className={`header-username header-btn`} onClick={showModal}><i class="fas fa-plus-circle"></i></span>
+				<button className={`header-username header-btn`} onClick={handleHistory}>{showHistory ? <i className="fas fa-home"></i> : <i className="fas fa-history"></i>}</button>
+				<button className={`header-username header-btn`} onClick={showModal}><i class="fas fa-plus-circle"></i></button>
 			</div>
 		</div>
 	)

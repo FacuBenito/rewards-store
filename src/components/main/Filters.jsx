@@ -5,6 +5,7 @@ import { ProductContext } from "../../context/ProductContext";
 
 const Filters = ({handleSort, sort, handlePage, page, isFooter}) => {
 
+	// eslint-disable-next-line no-unused-vars
 	const {products, setProducts} = useContext(ProductContext);
 	const prodLen = products.length;
 	const prodsOnPage = Math.min(16*page, prodLen);

@@ -41,7 +41,7 @@
 
 .header-bar .header-user{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   width: max-content;
   align-items: center;
   font-size: 1.5rem;
@@ -50,12 +50,19 @@
 
 .header-btn{
   background-color: #0ad4fa;
-  padding: .3rem .6rem;
+  height: 100%;
+  width: max-content;
+  padding: .3rem .5rem;
   border-radius: 50px;
   color: white;
   margin-left: .5rem;
   cursor: pointer;
   opacity: .7;
+  border: none;
+}
+
+.header-btn i{
+  font-size: 1.5rem;
 }
 
 .header-btn:hover{
