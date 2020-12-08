@@ -5,10 +5,13 @@ const AddModal = ({shown, showModal}) =>{
 
 	return(
 		<div className={`modal-ctn ${!shown ? "hidden" : ""}`} id="modal-ctn">
-			<div className="add-modal">
+			<div className="add-modal" >
+				<h1 className="add-title">Add more coins! <p className="emoji">&#129297;</p></h1>
+				
 				<div className="close-ctn" onClick={showModal}>
 					<i className="fas fa-times"></i>
 				</div>
+
 				<div className="add-btn" name="1000">
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">1000</h3>
