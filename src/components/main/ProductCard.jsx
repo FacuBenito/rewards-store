@@ -20,9 +20,6 @@ const ProductCard = (props) => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			const modal = document.getElementById("success-modal");
-			console.log(modal);
-			// modal.classList.add("fade-out");
 			setSuccess(null);
 		}, 4000);
 		clearTimeout();
