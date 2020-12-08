@@ -1,13 +1,32 @@
-/* eslint-disable no-unused-vars */
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import HoverFilter from "./HoverFilter";
 import bag from "../../assets/icons/buy-blue.svg";
 import coin from "../../assets/icons/coin.svg";
-import {UserContext} from "../../context/UserContext"
+import {UserContext} from "../../context/UserContext";
+import ProductService from "../../services/ProductService";
+import SuccessModal from "./Success";
 
 const ProductCard = (props) => {
 	const {category, cost, img, name, _id} = props;
-	const {user, setUser} = useContext(UserContext)
+	const {user} = useContext(UserContext);
+	const [success, setSuccess] = useState(null);
+
+	const handleRedeem = async (e) =>{
+		const pid = e.target.id;
+		const resp = await ProductService.redeemProduct(pid);
+
+		setSuccess(resp);
+	}
+
+	useEffect(() => {
+		setTimeout(() => {
+			const modal = document.getElementById("success-modal");
+			console.log(modal);
+			// modal.classList.add("fade-out");
+			setSuccess(null);
+		}, 4000);
+		clearTimeout();
+	},[success])
 	
 	return(
 			<div className="product-card" id={_id}>
@@ -26,10 +45,13 @@ const ProductCard = (props) => {
 					<h3 className="product-name">{name}</h3>
 				</div>
 				{
-					user.points > cost ? 
-					<HoverFilter cost={cost}/>
+					user.points > cost && (success === false || success === null)? 
+					<HoverFilter cost={cost} _id={_id} handleRedeem={handleRedeem}/>
 					:
 					null
+				}
+				{
+					success !== null ? <SuccessModal id="success-modal" isSuccess={success} /> : null
 				}
 			</div>
 	)

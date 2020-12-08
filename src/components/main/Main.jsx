@@ -7,8 +7,7 @@ import {ProductContext} from "../../context/ProductContext";
 const Main = () => {
 	const [sort, setSort] = useState("0")
 	const [page, setPage] = useState(1);
-	// eslint-disable-next-line no-unused-vars
-	const {products, setProducts} = useContext(ProductContext);
+	const {products} = useContext(ProductContext);
 	
 	const handleSort = (e) => {
 		setSort(e.target.name);
@@ -19,7 +18,6 @@ const Main = () => {
 		const increment = parseInt(e.target.name, 10)
 		setPage(page + increment);
 	}
-	console.log(products);
 	return(
 		<div className="main">
 			{

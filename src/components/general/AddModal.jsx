@@ -1,7 +1,16 @@
 import React from "react";
 import coin from "../../assets/icons/coin.svg";
+import UserService from "../../services/UserService";
 
 const AddModal = ({shown, showModal}) =>{
+
+	const handleAdd = async (e) => {
+		const amount = e.target.id;
+		const resp = await UserService.addCoins(amount);
+
+		alert(resp.message + ". You've added " + resp['new Points'] + " coins");
+		console.log(resp);
+	}
 
 	return(
 		<div className={`modal-ctn ${!shown ? "hidden" : ""}`} id="modal-ctn">
@@ -12,15 +21,15 @@ const AddModal = ({shown, showModal}) =>{
 					<i className="fas fa-times"></i>
 				</div>
 
-				<div className="add-btn" name="1000">
+				<div className="add-btn" name="1000" onClick={handleAdd}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">1000</h3>
 				</div>
-				<div className="add-btn" name="5000">
+				<div className="add-btn" name="5000" onClick={handleAdd}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">5000</h3>
 				</div>
-				<div className="add-btn" name="7500">
+				<div className="add-btn" name="7500" onClick={handleAdd}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">7500</h3>
 				</div>

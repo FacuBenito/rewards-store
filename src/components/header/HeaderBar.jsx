@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {useContext, useEffect, useState} from "react";
 import logo from "../../assets/aerolab-logo.svg";
 import coin from "../../assets/icons/coin.svg";
@@ -7,7 +6,7 @@ import { ProductContext } from "../../context/ProductContext";
 
 const HeaderBar = ({showModal}) => {
 	
-	const {user, setUser} = useContext(UserContext);
+	const {user} = useContext(UserContext);
 	const {products, setProducts} = useContext(ProductContext);
 	const [showHistory, setHistoryFlag] = useState(false);
 	const [auxProds, setAuxProds] = useState([]);
@@ -37,7 +36,7 @@ const HeaderBar = ({showModal}) => {
 					<img src={coin} alt="coin" className="coin"/>
 				</div>
 				<button className={`header-username header-btn`} onClick={handleHistory}>{showHistory ? <i className="fas fa-home"></i> : <i className="fas fa-history"></i>}</button>
-				<button className={`header-username header-btn`} onClick={showModal}><i class="fas fa-plus-circle"></i></button>
+				<button className={`header-username header-btn`} onClick={showModal}><i className="fas fa-plus-circle"></i></button>
 			</div>
 		</div>
 	)

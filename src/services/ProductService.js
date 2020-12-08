@@ -12,10 +12,40 @@ class ProductService{
 			headers: this.headers
 		}
 
-		const resp = await fetch("https://coding-challenge-api.aerolab.co/products", headers)
-		const data = await resp.json();
+		try{
+			const resp = await fetch("https://coding-challenge-api.aerolab.co/products", headers)
+			const data = await resp.json();
+
+			return data;
+
+		}catch(e){
+			return false;
+		}
+	}
+
+	static async redeemProduct(productID){
 		
-		return data;
+		const headers = {
+			headers: this.headers
+		}
+
+		const body = {
+			productid: {productID},
+			method: "post",
+			mode: "cors",
+			headers: headers
+		}
+		
+		try{
+			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/redeem`, body)
+			const data = await resp.json();
+
+			return data;
+
+		}catch(e){
+			return false;
+		}
+
 	}
 
 }

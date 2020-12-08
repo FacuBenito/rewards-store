@@ -16,9 +16,9 @@ const Header = () => {
 			<UserContextProvider>
 				<HeaderBar showModal={showModal}/>
 				<AddModal shown={shown} showModal={showModal}/>
+				<HeaderImg/>
 			</UserContextProvider>
 			
-			<HeaderImg/>
 
 		</div>
 	)

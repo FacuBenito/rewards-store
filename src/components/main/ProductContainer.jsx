@@ -27,6 +27,8 @@ const ProductContainer = ({sort, page}) => {
 		setProducts(sorted);
 	}, 
 	[sort]); //ESLINT sugiere poner products acá también, pero se genera recursividad infinita :c
+
+
 	
 	return(
 		<div className="product-container">{products && products.map((product, index) => {

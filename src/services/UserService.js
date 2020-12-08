@@ -10,9 +10,35 @@ class UserService{
 
 		const headers = {headers: this.headers}
 
-		const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers)
-		const data = await resp.json();
-		return data;
+		try{
+			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers)
+			const data = await resp.json();
+
+			return data;
+
+		}catch(e){
+			return false;
+		}
+	}
+
+	static async addCoins(amount){
+		const headers = {headers: this.headers}
+
+		const body = {
+			productid: {amount},
+			method: "post",
+			mode: "cors",
+			headers: headers
+		}
+
+		try{
+			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/user/points`, body);
+			const data = await resp.json();
+
+			return data;
+		}catch(e){
+			return false;
+		}
 	}
 
 }
