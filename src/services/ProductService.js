@@ -13,7 +13,10 @@ class ProductService{
 		}
 
 		try{
-			const resp = await fetch("https://coding-challenge-api.aerolab.co/products", headers)
+			const resp = await fetch("https://coding-challenge-api.aerolab.co/products", headers);
+			if(resp.status !== 200){
+				throw new Error("Error");
+			}
 			const data = await resp.json();
 
 			return data;
@@ -38,6 +41,9 @@ class ProductService{
 		
 		try{
 			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/redeem`, body)
+			if(resp.status !== 200){
+				throw new Error("Error");
+			}
 			const data = await resp.json();
 
 			return data;

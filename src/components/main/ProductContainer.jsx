@@ -31,22 +31,22 @@ const ProductContainer = ({sort, page}) => {
 
 	
 	return(
-		<div className="product-container">{products && products.map((product, index) => {
+		<UserContextProvider >
+			<div className="product-container">{products && products.map((product, index) => {
 
-			const limit = page*16;
-			const offSet = limit-16;
+				const limit = page*16;
+				const offSet = limit-16;
 
-			if(index >= offSet && index < limit){
-				return (
-					<UserContextProvider key={index}>
-						<ProductCard {...product}/>
-					</UserContextProvider>
-				)
-			}else{
-				return null;
-			}
-		})}
-	</div>
+				if(index >= offSet && index < limit){
+					return (
+						<ProductCard {...product} key={index}/>
+						)
+					}else{
+						return null;
+					}
+				})}
+			</div>
+		</UserContextProvider>
 	)
 }
 

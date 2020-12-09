@@ -15,7 +15,12 @@ const Header = () => {
 		<div className="header">
 			<UserContextProvider>
 				<HeaderBar showModal={showModal}/>
-				<AddModal shown={shown} showModal={showModal}/>
+				{
+					shown ? 
+					<AddModal showModal={showModal}/>
+					:
+					null
+				}
 				<HeaderImg/>
 			</UserContextProvider>
 			

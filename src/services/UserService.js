@@ -11,9 +11,12 @@ class UserService{
 		const headers = {headers: this.headers}
 
 		try{
-			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers)
-			const data = await resp.json();
+			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers);
 
+			if(resp.status !== 200){
+				throw new Error("Error");
+			}
+			const data = await resp.json();
 			return data;
 
 		}catch(e){
@@ -33,6 +36,9 @@ class UserService{
 
 		try{
 			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/user/points`, body);
+			if(resp.status !== 200){
+				throw new Error("Error");
+			}
 			const data = await resp.json();
 
 			return data;

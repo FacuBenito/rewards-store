@@ -34,7 +34,7 @@
   padding: .5rem 1rem;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
   background-color: white;
   width: 100%;
 }
@@ -302,7 +302,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  animation: fade-out linear 4s;
+  animation: fade-out linear 4s forwards;
+  z-index: 1293;
 }
 
 .success{

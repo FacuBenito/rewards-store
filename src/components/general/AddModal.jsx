@@ -1,19 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import coin from "../../assets/icons/coin.svg";
 import UserService from "../../services/UserService";
+import {UserContext} from "../../context/UserContext";
 
-const AddModal = ({shown, showModal}) =>{
+const AddModal = ({showModal}) =>{
+
+	const {setUser} = useContext(UserContext);
 
 	const handleAdd = async (e) => {
 		const amount = e.target.id;
 		const resp = await UserService.addCoins(amount);
 
+		if(resp !== false){
+			const newUser = UserService.getUserInfo();
+			setUser(newUser);
+		}
+
 		alert(resp.message + ". You've added " + resp['new Points'] + " coins");
-		console.log(resp);
 	}
 
 	return(
-		<div className={`modal-ctn ${!shown ? "hidden" : ""}`} id="modal-ctn">
+		<div className={`modal-ctn`} id="modal-ctn">
 			<div className="add-modal" >
 				<h1 className="add-title">Add more coins! <p className="emoji">&#129297;</p></h1>
 				

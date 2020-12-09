@@ -9,7 +9,7 @@ const HoverFilter = ({cost, _id, handleRedeem}) => {
 				<h3 className="product-cost">{cost}</h3>
 				<img src={coin} alt="coin" className="hover-coin"/>
 			</div>
-			<button className="redeem-btn" id={_id} onClick={handleRedeem}>Redeem now</button>
+			<button className="redeem-btn" id={_id} value={cost} onClick={handleRedeem}>Redeem now</button>
 		</div>
 	)
 }

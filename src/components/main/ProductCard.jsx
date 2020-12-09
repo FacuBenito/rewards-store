@@ -4,16 +4,27 @@ import bag from "../../assets/icons/buy-blue.svg";
 import coin from "../../assets/icons/coin.svg";
 import {UserContext} from "../../context/UserContext";
 import ProductService from "../../services/ProductService";
+import UserService from "../../services/UserService";
 import SuccessModal from "./Success";
 
 const ProductCard = (props) => {
 	const {category, cost, img, name, _id} = props;
-	const {user} = useContext(UserContext);
+	const {user, setUser} = useContext(UserContext);
 	const [success, setSuccess] = useState(null);
 
 	const handleRedeem = async (e) =>{
 		const pid = e.target.id;
 		const resp = await ProductService.redeemProduct(pid);
+		let updateCoins;
+
+		if(resp !== false){
+			updateCoins = await UserService.addCoins(-(e.target.value));
+
+			if(updateCoins){
+				const newUser = await UserService.getUserInfo();
+				setUser(newUser);
+			}
+		}
 
 		setSuccess(resp);
 	}
