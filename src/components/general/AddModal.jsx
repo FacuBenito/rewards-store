@@ -10,9 +10,9 @@ const AddModal = ({showModal}) =>{
 	const handleAdd = async (e) => {
 		const amount = e.target.id;
 		const resp = await UserService.addCoins(amount);
-
+		console.log(resp);
 		if(resp !== false){
-			const newUser = UserService.getUserInfo();
+			const newUser = await UserService.getUserInfo();
 			setUser(newUser);
 		}
 

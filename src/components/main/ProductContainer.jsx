@@ -28,7 +28,7 @@ const ProductContainer = ({sort, page}) => {
 	}, 
 	[sort]); //ESLINT sugiere poner products acá también, pero se genera recursividad infinita :c
 
-
+	console.log(products);
 	
 	return(
 		<UserContextProvider >

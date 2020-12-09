@@ -3,6 +3,7 @@ import logo from "../../assets/aerolab-logo.svg";
 import coin from "../../assets/icons/coin.svg";
 import { UserContext } from "../../context/UserContext";
 import { ProductContext } from "../../context/ProductContext";
+import UserService from "../../services/UserService";
 
 const HeaderBar = ({showModal}) => {
 	
@@ -15,14 +16,18 @@ const HeaderBar = ({showModal}) => {
 		setHistoryFlag(!showHistory);
 	}
 
-	useEffect(() => {
+	const getHistory = async () => {
+		const history = await UserService.getRedeemHistory();
 
-		if(products !== user.redeemHistory){
+		if(products !== history){
 			setAuxProds(products);
 		}
 		
-		setProducts((showHistory ? user.redeemHistory : auxProds));
+		setProducts((showHistory ? history : auxProds));
+	}
 
+	useEffect(() => {
+		getHistory();
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[showHistory]);
 

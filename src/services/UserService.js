@@ -47,6 +47,25 @@ class UserService{
 		}
 	}
 
+	static async getRedeemHistory(){
+
+		const headers = {headers: this.headers}
+
+		try{
+			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/user/history`, headers);
+
+			if(resp.status !== 200){
+				throw new Error("Error");
+			}
+			const data = await resp.json();
+			console.log(data);
+			return data;
+		}catch(e){
+			console.log(e);
+			return false;
+		}
+	}
+
 }
 
 export default UserService;
