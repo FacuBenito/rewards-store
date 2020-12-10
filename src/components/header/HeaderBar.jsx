@@ -9,7 +9,7 @@ const HeaderBar = ({showModal}) => {
 	
 	const {user} = useContext(UserContext);
 	const {products, setProducts} = useContext(ProductContext);
-	const [showHistory, setHistoryFlag] = useState(false);
+	const [showHistory, setHistoryFlag] = useState(null);
 	const [auxProds, setAuxProds] = useState([]);
 
 	const handleHistory = async () => {
@@ -27,7 +27,7 @@ const HeaderBar = ({showModal}) => {
 	}
 
 	useEffect(() => {
-		if(showHistory){
+		if(showHistory !== null){
 			getHistory();
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
