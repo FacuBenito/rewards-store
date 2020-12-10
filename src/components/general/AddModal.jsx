@@ -8,9 +8,10 @@ const AddModal = ({showModal}) =>{
 	const {setUser} = useContext(UserContext);
 
 	const handleAdd = async (e) => {
+		
 		const amount = e.target.id;
 		const resp = await UserService.addCoins(amount);
-		console.log(resp);
+
 		if(resp !== false){
 			const newUser = await UserService.getUserInfo();
 			setUser(newUser);
