@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Filter from "./Filters";
 import ProductContainer from "./ProductContainer";
 import Error from "../general/Error";
@@ -18,6 +18,11 @@ const Main = () => {
 		const increment = parseInt(e.target.name, 10)
 		setPage(page + increment);
 	}
+
+	useEffect(() => {
+		setPage(1)
+	},[products])
+
 	return(
 		<div className="main">
 			{
