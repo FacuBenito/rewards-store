@@ -27,7 +27,9 @@ const HeaderBar = ({showModal}) => {
 	}
 
 	useEffect(() => {
-		getHistory();
+		if(showHistory){
+			getHistory();
+		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[showHistory]);
 
