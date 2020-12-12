@@ -35,8 +35,6 @@ class ProductService{
 			headers: this.headers
 		}
 
-		console.log(params);
-
 		try{
 			const resp = await fetch(`https://coding-challenge-api.aerolab.co/redeem`, params);
 

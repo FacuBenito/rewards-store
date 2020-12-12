@@ -17,7 +17,6 @@ export default function UserContextProvider({children}) {
 	}, [])
 
 	useEffect(() => {
-		console.log("Me quiero morir 3 veces");
 	}, [user])
 
 	return(

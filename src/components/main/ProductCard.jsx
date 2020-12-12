@@ -18,8 +18,6 @@ const ProductCard = (props) => {
 
 		if(resp !== false){
 			const newUser = await UserService.getUserInfo();
-			console.log("Debería haber shalalala");
-			console.log(newUser);
 			setUser(newUser);
 		}
 

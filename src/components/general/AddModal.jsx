@@ -14,7 +14,6 @@ const AddModal = ({showModal}) =>{
 		if(resp !== false){
 			const newUser = await UserService.getUserInfo();
 			setUser(newUser);
-			console.log(resp);
 			alert(resp.message + ". You've added " + amount + " coins");
 		}else{
 			alert("Failed to add coins.")

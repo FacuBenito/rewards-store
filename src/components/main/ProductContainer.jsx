@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from "react";
-// import ProductService from "../../services/ProductService";
 import ProductCard from "./ProductCard";
-import UserContextProvider from "../../context/UserContext";
 import { ProductContext } from "../../context/ProductContext";
 
 const ProductContainer = ({sort, page}) => {
