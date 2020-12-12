@@ -15,15 +15,12 @@ const ProductCard = (props) => {
 	const handleRedeem = async (e) =>{
 		const pid = e.target.id;
 		const resp = await ProductService.redeemProduct(pid);
-		let updateCoins;
 
 		if(resp !== false){
-			updateCoins = await UserService.addCoins(-(e.target.value));
-
-			if(updateCoins){
-				const newUser = await UserService.getUserInfo();
-				setUser(newUser);
-			}
+			const newUser = await UserService.getUserInfo();
+			console.log("Debería haber shalalala");
+			console.log(newUser);
+			setUser(newUser);
 		}
 
 		setSuccess(resp);

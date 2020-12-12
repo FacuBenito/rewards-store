@@ -7,17 +7,19 @@ const AddModal = ({showModal}) =>{
 
 	const {setUser} = useContext(UserContext);
 
-	const handleAdd = async (e) => {
+	const handleAdd = async (amount) => {
 		
-		const amount = e.target.id;
 		const resp = await UserService.addCoins(amount);
 
 		if(resp !== false){
 			const newUser = await UserService.getUserInfo();
 			setUser(newUser);
+			console.log(resp);
+			alert(resp.message + ". You've added " + amount + " coins");
+		}else{
+			alert("Failed to add coins.")
 		}
 
-		alert(resp.message + ". You've added " + resp['new Points'] + " coins");
 	}
 
 	return(
@@ -29,15 +31,15 @@ const AddModal = ({showModal}) =>{
 					<i className="fas fa-times"></i>
 				</div>
 
-				<div className="add-btn" name="1000" onClick={handleAdd}>
+				<div className="add-btn" name="1000" onClick={() => handleAdd(1000)}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">1000</h3>
 				</div>
-				<div className="add-btn" name="5000" onClick={handleAdd}>
+				<div className="add-btn" name="5000" onClick={() => handleAdd(5000)}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">5000</h3>
 				</div>
-				<div className="add-btn" name="7500" onClick={handleAdd}>
+				<div className="add-btn" name="7500" onClick={() => handleAdd(7500)}>
 					<img src={coin} alt="coin" className="coin"/>
 					<h3 className="amount">7500</h3>
 				</div>

@@ -16,6 +16,10 @@ export default function UserContextProvider({children}) {
 		getUser();
 	}, [])
 
+	useEffect(() => {
+		console.log("Me quiero morir 3 veces");
+	}, [user])
+
 	return(
 		<UserContext.Provider value={{user, setUser}}>
 			{children}

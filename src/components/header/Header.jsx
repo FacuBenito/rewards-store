@@ -13,18 +13,14 @@ const Header = () => {
 
 	return(
 		<div className="header">
-			<UserContextProvider>
-				<HeaderBar showModal={showModal}/>
-				{
-					shown ? 
-					<AddModal showModal={showModal}/>
-					:
-					null
-				}
-				<HeaderImg/>
-			</UserContextProvider>
-			
-
+			<HeaderBar showModal={showModal}/>
+			{
+				shown ? 
+				<AddModal showModal={showModal}/>
+				:
+				null
+			}
+			<HeaderImg/>
 		</div>
 	)
 

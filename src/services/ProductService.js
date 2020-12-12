@@ -3,7 +3,7 @@ class ProductService{
 	static headers = {
 		"Content-Type": "application/json",
 		"Accept": "application/json",
-		"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+		"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYWQ2MjI2ZjdkMjAwMjA0MTE0YzQiLCJpYXQiOjE2MDcxODM3MTR9.wLlxyZRRYe2RIDzq0JhfEg-hMwNcF8NHJAtx8CV7vrw"
 	}
 
 	static async getProducts(){
@@ -15,7 +15,7 @@ class ProductService{
 		try{
 			const resp = await fetch("https://coding-challenge-api.aerolab.co/products", headers);
 			if(resp.status !== 200){
-				throw new Error("Error");
+				throw new Error(resp);
 			}
 			const data = await resp.json();
 
@@ -26,23 +26,22 @@ class ProductService{
 		}
 	}
 
-	static async redeemProduct(productID){
-		
-		const headers = {
+	static async redeemProduct(productId){
+
+		const params = {
+			body: JSON.stringify({productId}),
+			method: "post",
+			mode: "cors",
 			headers: this.headers
 		}
 
-		const body = {
-			productid: {productID},
-			method: "post",
-			mode: "cors",
-			headers: headers
-		}
-		
+		console.log(params);
+
 		try{
-			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/redeem`, body)
+			const resp = await fetch(`https://coding-challenge-api.aerolab.co/redeem`, params);
+
 			if(resp.status !== 200){
-				throw new Error("Error");
+				throw new Error(resp);
 			}
 			const data = await resp.json();
 

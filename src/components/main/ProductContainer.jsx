@@ -29,22 +29,20 @@ const ProductContainer = ({sort, page}) => {
 	[sort]); //ESLINT sugiere poner products acá también, pero se genera recursividad infinita :c
 	
 	return(
-		<UserContextProvider >
-			<div className="product-container">{products && products.map((product, index) => {
+		<div className="product-container">{products && products.map((product, index) => {
 
-				const limit = page*16;
-				const offSet = limit-16;
+			const limit = page*16;
+			const offSet = limit-16;
 
-				if(index >= offSet && index < limit){
-					return (
-						<ProductCard {...product} key={index}/>
-						)
-					}else{
-						return null;
-					}
-				})}
-			</div>
-		</UserContextProvider>
+			if(index >= offSet && index < limit){
+				return (
+					<ProductCard {...product} key={`${product._id}-${index}`}/>
+					)
+				}else{
+					return null;
+				}
+			})}
+		</div>
 	)
 }
 

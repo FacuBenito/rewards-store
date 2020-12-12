@@ -14,8 +14,10 @@ class UserService{
 			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/me`, headers);
 
 			if(resp.status !== 200){
-				throw new Error("Error");
+				throw new Error(resp);
 			}
+
+			console.count("shalalalala");
 			const data = await resp.json();
 			return data;
 
@@ -25,20 +27,19 @@ class UserService{
 	}
 
 	static async addCoins(amount){
-		const headers = {headers: this.headers}
 
-		const body = {
-			productid: {amount},
+		const params = {
+			body: JSON.stringify({amount: amount,}),
 			method: "post",
 			mode: "cors",
-			headers: headers
+			headers: this.headers
 		}
 
 		try{
-			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/user/points`, body);
+			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/points`, params);
 
 			if(resp.status !== 200){
-				throw new Error("Error");
+				throw new Error(resp);
 			}
 
 			const data = await resp.json();
@@ -54,7 +55,7 @@ class UserService{
 		const headers = {headers: this.headers}
 
 		try{
-			const resp = await fetch(`https://private-2f5cb-aerolabchallenge.apiary-mock.com/user/history`, headers);
+			const resp = await fetch(`https://coding-challenge-api.aerolab.co/user/history`, headers);
 
 			if(resp.status !== 200){
 				throw new Error("Error");
