@@ -43,7 +43,7 @@ class ProductService{
 			}
 			const data = await resp.json();
 
-			return data;
+			return false;
 
 		}catch(e){
 			return false;

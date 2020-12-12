@@ -48,7 +48,7 @@ const ProductCard = (props) => {
 					<h3 className="product-name">{name}</h3>
 				</div>
 				{
-					user.points >= cost && (success === false || success === null)? 
+					user.points >= cost && (success === null)? 
 					<HoverFilter cost={cost} _id={_id} handleRedeem={handleRedeem}/>
 					:
 					null
