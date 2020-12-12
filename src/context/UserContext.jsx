@@ -5,7 +5,7 @@ export const UserContext = React.createContext();
 
 export default function UserContextProvider({children}) {
 
-	const [user, setUser] = useState({name:"", points:""});
+	const [user, setUser] = useState({name:"", points:"", redeemHistory: []});
 
 	const getUser = async () => {
 		const newUser = await UserService.getUserInfo();
