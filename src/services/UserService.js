@@ -17,7 +17,6 @@ class UserService{
 				throw new Error(resp);
 			}
 
-			console.count("shalalalala");
 			const data = await resp.json();
 			return data;
 

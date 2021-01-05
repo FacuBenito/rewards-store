@@ -6,10 +6,12 @@ import {UserContext} from "../../context/UserContext";
 import ProductService from "../../services/ProductService";
 import UserService from "../../services/UserService";
 import SuccessModal from "./Success";
+import { ProductContext } from "../../context/ProductContext";
 
 const ProductCard = (props) => {
 	const {category, cost, img, name, _id} = props;
 	const {user, setUser} = useContext(UserContext);
+	const {showHistory, setShowHistory} = useContext(ProductContext);
 	const [success, setSuccess] = useState(null);
 
 	const handleRedeem = async (e) =>{
@@ -48,7 +50,7 @@ const ProductCard = (props) => {
 					<h3 className="product-name">{name}</h3>
 				</div>
 				{
-					user.points >= cost && (success === null)? 
+					user.points >= cost && (success === null) && !showHistory ? 
 					<HoverFilter cost={cost} _id={_id} handleRedeem={handleRedeem}/>
 					:
 					null

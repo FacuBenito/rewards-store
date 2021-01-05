@@ -9,7 +9,7 @@ const HeaderBar = ({showModal}) => {
 	
 	const {user} = useContext(UserContext);
 	const {products, setProducts} = useContext(ProductContext);
-	const [showHistory, setHistoryFlag] = useState(null);
+	const {showHistory, setHistoryFlag} = useContext(ProductContext);
 	const [auxProds, setAuxProds] = useState([]);
 
 	const handleHistory = async () => {
@@ -36,7 +36,7 @@ const HeaderBar = ({showModal}) => {
 	return(
 		<div className="header-bar">
 			<img className="header-logo" src={logo} alt="logo"/>
-			<div className="header-user">
+			<nav className="header-user">
 				<span className="header-username">{user && user.name}</span>
 				<div className="header-coins" onClick={showModal}>
 					<span className="header-coin-count">{user && user.points}</span>
@@ -44,7 +44,7 @@ const HeaderBar = ({showModal}) => {
 				</div>
 				<button className={`header-username header-btn`} onClick={handleHistory}>{showHistory ? <i className="fas fa-home"></i> : <i className="fas fa-history"></i>}</button>
 				<button className={`header-username header-btn`} onClick={showModal}><i className="fas fa-plus-circle"></i></button>
-			</div>
+			</nav>
 		</div>
 	)
 

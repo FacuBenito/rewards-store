@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import HeaderImg from "./HeaderImg";
 import HeaderBar from "./HeaderBar";
 import AddModal from "../general/AddModal";
@@ -11,7 +11,7 @@ const Header = () => {
 	}
 
 	return(
-		<div className="header">
+		<header className="header">
 			<HeaderBar showModal={showModal}/>
 			{
 				shown ? 
@@ -20,7 +20,7 @@ const Header = () => {
 				null
 			}
 			<HeaderImg/>
-		</div>
+		</header>
 	)
 
 }

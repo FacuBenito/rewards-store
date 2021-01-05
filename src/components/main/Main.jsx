@@ -24,7 +24,7 @@ const Main = () => {
 	},[products])
 
 	return(
-		<div className="main">
+		<main className="main">
 			{
 				products.length === 0 ? 
 					<Error /> 
@@ -35,7 +35,7 @@ const Main = () => {
 						<Filter handlePage={handlePage} page={page} isFooter={true}/>
 					</>
 			}
-		</div>
+		</main>
 	)
 }
 

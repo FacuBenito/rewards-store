@@ -17,9 +17,7 @@ class ProductService{
 			if(resp.status !== 200){
 				throw new Error(resp);
 			}
-			const data = await resp.json();
-
-			return data;
+			return await resp.json();
 
 		}catch(e){
 			return false;
@@ -41,9 +39,7 @@ class ProductService{
 			if(resp.status !== 200){
 				throw new Error(resp);
 			}
-			const data = await resp.json();
-
-			return data;
+			return await resp.json();
 
 		}catch(e){
 			return false;

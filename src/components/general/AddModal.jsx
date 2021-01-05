@@ -11,7 +11,7 @@ const AddModal = ({showModal}) =>{
 		
 		const resp = await UserService.addCoins(amount);
 
-		if(resp !== false){
+		if(resp){
 			const newUser = await UserService.getUserInfo();
 			setUser(newUser);
 			alert(resp.message + ". You've added " + amount + " coins");
@@ -24,7 +24,7 @@ const AddModal = ({showModal}) =>{
 	return(
 		<div className={`modal-ctn`} id="modal-ctn">
 			<div className="add-modal" >
-				<h1 className="add-title">Add more coins! <p className="emoji">&#129297;</p></h1>
+				<h2 className="add-title">Add more coins! <p className="emoji">&#129297;</p></h2>
 				
 				<div className="close-ctn" onClick={showModal}>
 					<i className="fas fa-times"></i>

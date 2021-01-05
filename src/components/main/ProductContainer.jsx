@@ -8,21 +8,21 @@ const ProductContainer = ({sort, page}) => {
 	const {products, setProducts} = useContext(ProductContext);
 
 	useEffect(() => {
-			const sorted = products.slice().sort((a, b) => {
+			const sortedProducts = products.slice().sort((a, b) => {
 	
 				switch (sort){
-					case "1":
+					case "lowestPrice":
 						return a.cost - b.cost;
-					case "2": 
+					case "highestPrice": 
 						return b.cost - a.cost;
-					case "0":
+					case "mostRecent":
 						return (a._id < b._id) ? -1 : 1;
 					default:
 						return 0;
 				}
 	
 			});
-		setProducts(sorted);
+		setProducts(sortedProducts);
 	}, 
 	[sort]); //ESLINT sugiere poner products acá también, pero se genera recursividad infinita :c
 	
