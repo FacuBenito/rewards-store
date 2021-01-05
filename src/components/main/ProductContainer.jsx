@@ -5,26 +5,7 @@ import { ProductContext } from "../../context/ProductContext";
 
 const ProductContainer = ({sort, page}) => {
 
-	const {products, setProducts} = useContext(ProductContext);
-
-	useEffect(() => {
-			const sortedProducts = products.slice().sort((a, b) => {
-	
-				switch (sort){
-					case "lowestPrice":
-						return a.cost - b.cost;
-					case "highestPrice": 
-						return b.cost - a.cost;
-					case "mostRecent":
-						return (a._id < b._id) ? -1 : 1;
-					default:
-						return 0;
-				}
-	
-			});
-		setProducts(sortedProducts);
-	}, 
-	[sort]); //ESLINT sugiere poner products acá también, pero se genera recursividad infinita :c
+	const {products} = useContext(ProductContext);
 	
 	return(
 		<div className="product-container">{products && products.map((product, index) => {

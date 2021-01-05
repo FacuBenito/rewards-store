@@ -17,6 +17,7 @@ class ProductService{
 			if(resp.status !== 200){
 				throw new Error(resp);
 			}
+			
 			return await resp.json();
 
 		}catch(e){

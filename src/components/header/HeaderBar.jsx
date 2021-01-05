@@ -19,7 +19,7 @@ const HeaderBar = ({showModal}) => {
 	const getHistory = async () => {
 		const history = await UserService.getRedeemHistory();
 
-		if(products !== history){
+		if(products.toString() !== history.toString()){
 			setAuxProds(products);
 		}
 		
