@@ -26,13 +26,13 @@ const Main = () => {
 	return(
 		<main className="main">
 			{
-				products.length === 0 ? 
+				products.length < 1 ? 
 					<Error /> 
 				:
 					<>
-						<Filter handleSort={handleSort} sort={sort} handlePage={handlePage} page={page} isFooter={false}/>
-						<ProductContainer sort={sort} page={page}/>
-						<Filter handlePage={handlePage} page={page} isFooter={true}/>
+						<Filter handleSort={handleSort} sort={sort} handlePage={handlePage} page={page} isFooter={false} />
+						<ProductContainer sort={sort} page={page} />
+						<Filter handlePage={handlePage} page={page} isFooter={true} />
 					</>
 			}
 		</main>
